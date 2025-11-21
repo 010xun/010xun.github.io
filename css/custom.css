@@ -428,19 +428,19 @@ figure.highlight pre .addition {
 
 
 
-/* 公众号 Start（固定显示 + CSS 加载图片，无反转效果） */
+/* 公众号 Start（固定显示，无反转效果） */
 [data-theme='light'] #aside-content .card-widget#card-wechat {
     background: #49b1f5 !important; /* 浅色模式下卡片背景色 */
 }
 
 #aside-content .card-widget#card-wechat {
-    background: var(--card-bg); /* 深色模式下继承黑色主题背景 */
+    background: var(--card-bg); /* 深色模式下继承卡片背景（你的黑色主题） */
     display: flex;
     justify-content: center;
-    align-items: center; /* 垂直居中容器 */
+    align-items: center; /* 垂直居中 */
     padding: 1rem 0; /* 上下内边距，优化显示 */
     border: none;
-    cursor: default; /* 取消指针样式 */
+    cursor: default; /* 取消指针样式（无需点击/翻转） */
 }
 
 /* 移动端隐藏控制（按需保留） */
@@ -458,34 +458,25 @@ figure.highlight pre .addition {
     }
 }
 
-/* 二维码容器（核心：通过 CSS background-image 加载图片） */
+/* 二维码容器 */
 .wx-qrcode-container {
     width: 235px; /* 与原容器宽度一致 */
-    height: 235px; /* 必须指定高度，确保背景图完整显示 */
     text-align: center; /* 文字居中 */
-    /* 替换为你的公众号二维码图片 URL（必填！） */
-    background-image: url(https://010xun.github.io/img/weixin.jpg);
-    background-size: contain; /* 保持图片比例，完整显示不拉伸 */
-    background-repeat: no-repeat; /* 禁止图片重复 */
-    background-position: center top; /* 图片垂直居上，下方留文字空间 */
-    position: relative; /* 用于定位文字 */
 }
 
-/* 公众号名称样式（在图片下方） */
+/* 二维码图片样式 */
+.wx-qrcode {
+    width: 100%; /* 自适应容器宽度 */
+    height: auto; /* 保持宽高比 */
+    border-radius: 8px; /* 可选：添加轻微圆角，更美观 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* 可选：添加阴影，提升质感 */
+}
+
+/* 公众号名称样式（可选，按需调整） */
 .wx-title {
-    position: absolute;
-    bottom: 0; /* 固定在容器底部 */
-    left: 0;
-    right: 0;
-    margin-top: 0; /* 取消原有的上外边距 */
+    margin-top: 0.8rem;
     font-size: 0.9rem;
     color: var(--text-color); /* 继承主题文字色，适配黑白主题 */
     font-weight: 500;
-    padding-bottom: 0.3rem; /* 轻微下内边距，避免贴边 */
-}
-
-/* 可选优化：深色主题下给图片加阴影，提升辨识度 */
-[data-theme='dark'] .wx-qrcode-container {
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4); /* 黑色背景下阴影更明显 */
 }
 /* 公众号 End */
