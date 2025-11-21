@@ -464,7 +464,7 @@ figure.highlight pre .addition {
     height: 235px; /* 必须指定高度，确保背景图完整显示 */
     text-align: center; /* 文字居中 */
     /* 替换为你的公众号二维码图片 URL（必填！） */
-    background-image: url('https://010xun.github.io/img/weixin.jpg');
+    background-image: url(https://010xun.github.io/img/weixin.jpg);
     background-size: contain; /* 保持图片比例，完整显示不拉伸 */
     background-repeat: no-repeat; /* 禁止图片重复 */
     background-position: center top; /* 图片垂直居上，下方留文字空间 */
